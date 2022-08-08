@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  client:
+    # path to directory with dockerfile
+    build: .
+    container_name: 'todo-react-app-container'
+    ports:
+      - '3000:3000'
+    stdin_open: true
+    tty: true
+    # allows the app to refresh when changes are made
+    volumes:
+      - .:/app
+      - ./app/node_modules
