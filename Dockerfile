@@ -1,5 +1,5 @@
 # what image we are using
-FROM node:current-alpine
+FROM node:17-alpine
 
 # the name of our work directory
 WORKDIR /app
