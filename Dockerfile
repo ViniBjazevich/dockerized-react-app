@@ -1,16 +1,18 @@
 # what image we are using
 FROM node:17-alpine
 
-# the name of our work directory
+# the name of our working directory
 WORKDIR /app
 
-# copies package.json to the root directory
+# copy [what files] [where they get copied to]
+# star is a wild card so package-anything.json will be copied over
+# this is to get the package-lock.json and package.json
 COPY package*.json .
 
 # runs npm install
 RUN npm install
 
-# copy [what files] [where they get copied to]
+# copy everything into our working directory
 COPY . .
 
 # exposes port 3000
